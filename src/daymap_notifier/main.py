@@ -18,6 +18,15 @@ async def main():
 
     last_triggered = None
 
+    if config["username"] == "":
+        email = input("Email: ")
+        password = input("Password: ")
+        username = email.split("@")[0]
+
+        await daymap.login(email, password, username)
+
+        print("Logged in!")
+
     while True:
         now = datetime.now()
 

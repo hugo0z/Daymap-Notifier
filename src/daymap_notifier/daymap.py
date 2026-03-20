@@ -24,7 +24,7 @@ async def login(email: str, password: str, username: str):
         username (str): The username for the user's account.
     """
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=True)
         context = await browser.new_context()
         page = await context.new_page()
 
