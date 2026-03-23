@@ -60,7 +60,7 @@ async def main():
                     print(new_message)
 
                     await notifier.send(
-                        title="Next Class!",
+                        title="Daymap Notifier",
                         message=new_message,
                         icon=LOGO_PATH,
                     )

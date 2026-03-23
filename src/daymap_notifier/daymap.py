@@ -1,10 +1,8 @@
-import asyncio
 import json
 import re
 from pathlib import Path
 
 import httpx
-import requests
 import settings
 from bs4 import BeautifulSoup
 from playwright.async_api import TimeoutError, async_playwright
@@ -98,6 +96,7 @@ async def get_timetable(week_start):
     r.raise_for_status()
     html = r.json()["d"]
 
+    # This was made by ChatGPT :)
     soup = BeautifulSoup(html, "html.parser")
     table = soup.find("table", id="tblTt")
     rows = table.find_all("tr")
